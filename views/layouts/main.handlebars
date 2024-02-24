@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <title>The Techblog</title>
+     
+
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+      <header class="display-flex bg-black border-b border-gray-300 text-3xl ">
+          
+      <nav class="flex flex-row items-center px-4 py-6">
+
+        <a href="/" class="px-4 py-2 text-white rounded hover:bg-gray-800 ">Home</a>
+        
+         <a href="/dashboard" class="px-4 py-2 text-white rounded hover:bg-gray-800">Dashboard</a>
+ 
+     {{#if logged_in}}  
+          
+  <a href="/logout" id="logout" class="px-4 py-2 text-white rounded hover:bg-gray-800">Logout</a>    
+          {{else}}
+          <a href="/login" class="px-4 py-2 text-white rounded hover:bg-gray-800">Login</a>
+  
+        {{/if}}
+
+       </div> 
+       </nav>
+   
+  {{#if logged_in}}  
+  <h1 class ="px-12 py-4 text-white bg-gray-800"> Your Dashboard </h1>
+    {{else}}
+       <h1 class ="px-12 py-4 text-white bg-gray-800"> The Tech Blog </h1>
+      {{/if}}
+
+</header>
+  <main>
+    <div class="body row  bg-green-100" >
+      {{{body}}}
+    </div>
+  </main>
+</body>
+{{#if logged_in}} 
+
+<script src="./js/logout.js"></script>
+{{/if}}
+
+</html>
+
